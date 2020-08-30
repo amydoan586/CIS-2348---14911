@@ -1,30 +1,25 @@
-print("Enter amount of lemon juice (in cups):")
-Lemon_Amount = float(input())
-print("Enter amount of water (in cups):")
-Water_Amount = float(input())
-print("Enter amount of agave nectar (in cups):")
-Nectar_Amount = float(input())
-print("How many servings does this make?")
-Servings = float(input())
-print('\n')
-print("Lemonade ingredients - yields", '{:.2f}'.format(Servings))
-print('{:.2f}'.format(Lemon_Amount), "cups(s) lemon juice")
-print('{:.2f}'.format(Water_Amount), "cup(s) water")
-print('{:.2f}'.format(Nectar_Amount), "cup(s) agave nectar")
-print("How many servings would you like to make?")
-Asked_Servings = float(input())
-Lemon_Amount = Lemon_Amount * (Asked_Servings/Servings)
-Water_Amount = Water_Amount * (Asked_Servings/Servings)
-Nectar_Amount = Nectar_Amount * (Asked_Servings/Servings)
-print('\n')
-print("Lemonade ingredients - yields", '{:.2f}'.format(Asked_Servings))
+Lemon_Amount = float(input("Enter amount of lemon juice (in cups):\n")) #User is asked to input Lemon amount in cups
+Water_Amount = float(input("Enter amount of water (in cups):\n")) #User is asked to input water amount in cups
+Nectar_Amount = float(input("Enter amount of agave nectar (in cups):\n")) #User is asked to input agave nectar amount in cups
+Servings = float(input("How many servings does this make?\n")) #User is asked to input serving
+print()
+print("Lemonade ingredients - yields", '{:.2f}'.format(Servings),"servings") #Number is converted with 2 decimals
 print('{:.2f}'.format(Lemon_Amount), "cup(s) lemon juice")
 print('{:.2f}'.format(Water_Amount), "cup(s) water")
-print('{:.2f}'.format(Nectar_Amount), "cup(s) agave nectar")
-Lemon_Amount = Lemon_Amount /16
-Water_Amount = Water_Amount /16
-Nectar_Amount = Nectar_Amount /16
-print("Lemonade ingredients - yields", '{:.2f}'.format(Asked_Servings))
+print('{:.2f}'.format(Nectar_Amount), "cup(s) agave nectar\n")
+Asked_Servings = float(input("How many servings would you like to make?\n")) #User is asked to input how many servings
+print()
+Lemon_Amount = Lemon_Amount * (Asked_Servings/Servings) #Program takes Asked_serving and divide with serving to get hpw much is needed to multiple with Lemon_Amount
+Water_Amount = Water_Amount * (Asked_Servings/Servings) #Program takes Asked_serving and divide with serving to get hpw much is needed to multiple with Water_Amount
+Nectar_Amount = Nectar_Amount * (Asked_Servings/Servings) #Program takes Asked_serving and divide with serving to get hpw much is needed to multiple with Nectar_Amount
+print("Lemonade ingredients - yields", '{:.2f}'.format(Asked_Servings),"servings")
+print('{:.2f}'.format(Lemon_Amount), "cup(s) lemon juice")
+print('{:.2f}'.format(Water_Amount), "cup(s) water")
+print('{:.2f}'.format(Nectar_Amount), "cup(s) agave nectar\n")
+Lemon_Amount = Lemon_Amount /16 #Lemon_Amount is divided by 16 to convert cups to gallons
+Water_Amount = Water_Amount /16 #Water_Amount is divided by 16 to convert cups to gallons
+Nectar_Amount = Nectar_Amount /16 #Nectar_Amount is divided by 16 to convert cups to gallons
+print("Lemonade ingredients - yields", '{:.2f}'.format(Asked_Servings),"servings")
 print('{:.2f}'.format(Lemon_Amount), "gallon(s) lemon juice")
 print('{:.2f}'.format(Water_Amount), "gallon(s) water")
 print('{:.2f}'.format(Nectar_Amount), "gallon(s) agave nectar")
