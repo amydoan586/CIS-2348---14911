@@ -1,3 +1,4 @@
-userNum = int(input()) userNumSquared = userNum + userNum # Bug here; fix it when instructed
-print(userNumSquared, end=' ') # Output formatting issue here; fix it when instructed
+userNum = int(input()) #Asking user to input a number for userNum
+userNumSquared = userNum + userNum #UserNum is added twice and assign into userNumsquared
+print(userNumSquared, end = '\n') #Output userNumSquared with a new line
 
