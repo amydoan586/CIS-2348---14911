@@ -1,3 +1,4 @@
+#Amy Doan ID:1895125
 print("Enter integer:")
 user_num1 = int(input()) #User is asked to input a integer
 print("You entered:", user_num1)

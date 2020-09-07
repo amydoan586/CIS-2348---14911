@@ -1,3 +1,4 @@
+#Amy Doan ID:1895125
 import math #Add math functions
 Height = int(input("Enter wall height (feet):\n")) #User is asked to input height
 Width = int(input("Enter wall width (feet):\n")) #User is asked to input width

@@ -1,3 +1,4 @@
+#Amy Doan ID:1895125
 Lemon_Amount = float(input("Enter amount of lemon juice (in cups):\n")) #User is asked to input Lemon amount in cups
 Water_Amount = float(input("Enter amount of water (in cups):\n")) #User is asked to input water amount in cups
 Nectar_Amount = float(input("Enter amount of agave nectar (in cups):\n")) #User is asked to input agave nectar amount in cups
