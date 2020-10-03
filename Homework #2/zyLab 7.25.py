@@ -33,5 +33,7 @@ def exact_change(user_total):
             print(num_pennies,"pennies") # Multiple pennies
        elif num_pennies == 1:
             print(num_pennies, "penny") # 1 penny
-total = int(input()) # User input total amount
-exact_change(total)
+   return num_dollars, num_quarters, num_dimes, num_nickels, num_pennies
+if __name__ == '__main__':
+    inputval = int(input())
+    num_dollars, num_quarters, num_dimes, num_nickels, num_pennies = exact_change(inputval)
