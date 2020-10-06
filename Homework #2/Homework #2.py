@@ -5,7 +5,6 @@ date_list =[]
 while dates != "-1":
     dates = input() # User input dates until -1
     date_list.append(dates) # Adds to date_list
-print(date_list)
 for dates in date_list: #Loop dates from the date_list
     date_parse = dates.find(',') #Finding dates that contains ,
     date_period = dates.find('.') #Finding dates with period
