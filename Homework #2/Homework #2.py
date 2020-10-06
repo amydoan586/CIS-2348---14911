@@ -13,3 +13,4 @@ for dates in date_list: #Loop dates from the date_list
         dates[1] = dates[1].replace(',','/') #replacing comma with /
         dates = month_list[dates[0]] + '/' + dates[1] + dates[2] # Adding month, day and yea with /
         print(dates)
+file.close()
