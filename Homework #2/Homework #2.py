@@ -3,9 +3,8 @@
 month_list = {"January" : "1", "February" : "2", "March" : "3", "April" : "4", "May" : "5", "June" : "6", "July" : "7", "August" : "8", "September" : "9", "October" : "10", "November" : "11", "December" : "12"} # List of the month
 dates = ""
 date_list =[]
-while dates != "-1":
-    dates = input() # User input dates until -1
-    date_list.append(dates) # Adds to date_list
+with open("inputDates.txt","r") as file: # Open file
+    date_list = file.read().splitlines() # Read each line
 for dates in date_list: #Loop dates from the date_list
     date_parse = dates.find(',') #Finding dates that contains ,
     date_period = dates.find('.') #Finding dates with period
