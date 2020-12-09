@@ -33,12 +33,12 @@ class Inventory: # Class Inventory
                     ManufacturerDict[item] += DatesDict[item]
             return ManufacturerDict
     def Full_Inventory(self): # Create a Full Inventory file with the dictionary
-        with open("Test.csv",'w') as OutputFile:
+        with open("FullInventory.csv",'w') as OutputFile:
             Inventory = csv.writer(OutputFile)
             for ID, Info in sorted(ManufacturerDict.items(), key = lambda x:x[1]): # Sort by type and loop to output a csv file
                 Inventory.writerow([ID, Info[0],Info[1],Info[3],Info[4],Info[2]])
     def Laptop_Inventory(self): # Create Laptop Inventory csv file with the dictionary
-        with open("Test2.csv",'w') as OutputFile:
+        with open("LaptopInventory.csv",'w') as OutputFile:
             Laptop = csv.writer(OutputFile)
             for ID, Info in sorted(ManufacturerDict.items(),key = lambda x:x[0]): # Sort by ID and loop to output a csv file
                 if Info[1] == "laptop":
@@ -46,7 +46,7 @@ class Inventory: # Class Inventory
     def Past_Service_Date(self): # Create Past Service Date file with the dictionary
         Current_Date = str(date.today()) # Assign current date
         Current_Date = Current_Date.split('-') # Create a list with the date
-        with open("Test3.csv",'w') as OutputFile:
+        with open("PastServiceDateInventory.csv",'w') as OutputFile:
             PastDate = csv.writer(OutputFile)
             for ID, Info in sorted(ManufacturerDict.items()):
                 Past_Date = Info[4]
@@ -58,7 +58,7 @@ class Inventory: # Class Inventory
                         if int(Current_Date[2]) > int(Past_Date[1]): # Compare days
                             PastDate.writerow([ID, Info[0], Info[1], Info[3], Info[4], Info[2]])
     def Damaged_Inventory(self):
-        with open("Test4.csv",'w') as OutputFile:
+        with open("DamagedInventory.csv",'w') as OutputFile:
             Damaged = csv.writer(OutputFile)
             for ID, Info, in sorted(ManufacturerDict.items()):
                 if Info[2] == "damaged":
@@ -66,24 +66,23 @@ class Inventory: # Class Inventory
     def Find_Inventory(self):
         x = 0
         while x != 'q':
-            self.Manufacturer = input("Enter the manufacturer:")
-            self.ItemType = input("Enter the item type:")
+            self.Item = input("Enter Manufacturer and Item type:")
+            self.Item = self.Item.split()
+            ItemList = self.Item
             for ID, Info in ManufacturerDict.items():
-                if self.Manufacturer not in Info[0] and self.ItemType not in Info[1]:
-                    print("No such item in inventory")
-                    break
-                else:
-                    if Info[2] != "damaged":
-                        print("Your item is: ", ID, Info[0], Info[1], Info[2], Info[3])
-                        break
-            x = input()
-
-
-
-
-
-
-
+                if Info[2] != "damaged":
+                    if Info[0] in ItemList:
+                        if Info[1] in ItemList:
+                            print("Your item is:", ID, Info[0], Info[1], "$" + Info[3])
+                            break
+            else:
+                print("No such item in inventory")
+            for ID, Info in ManufacturerDict.items():
+                if Info[2] != "damaged":
+                    if Info[1] in ItemList and Info[0] not in ItemList:
+                        print("You may, also, consider:", ID, Info[0], Info[1], "$" + Info[3])
+            print()
+            x = input("Type any key to continue or q to quit\n")
 #main
 ItemInventory = Inventory()
 ItemInventory.Manufacturer_List()
